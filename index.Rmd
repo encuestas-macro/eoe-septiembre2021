@@ -1,0 +1,188 @@
+---
+css: style_eoe.css
+pagetitle: "EOE septiembre 2021"
+output: html_document
+---
+
+```{r config, include=FALSE}
+library(dplyr)
+library(stringr)
+library(lubridate)
+library(dygraphs)
+library(kableExtra)
+library(formattable)
+
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE)
+
+# Cambiar esta ruta depediendo el mes del informe -- -- -- --- 
+load(here::here("eoe", "outputs", "2021", "09. septiembre", "ws_septiembre_2021"))
+sparkline::sparkline(0)
+```
+
+<!-- Header del documento -->
+
+::: {.header}
+::: {.imagen}
+<img src="img/bcrd_squared.png" alt="drawing"/>
+:::
+
+::: {.title}
+<h2> Banco Central de la República Dominicana <br> Encuesta de Opinión Empresarial</h2>
+
+Septiembre 2021
+:::
+:::
+
+<hr class="head-ruler">
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+### Situación económica del sector industrial
+
+------------------------------------------------------------------------
+
+::: {.first-container}
+::: {.left}
+
+El indicador sobre la situación económica mostró una evolución favorable, pasó de 33.3 en agosto a 45.5 en septiembre.  Con este aumento el saldo de opinión alcanza en su valor más alto de los últimos 18 meses, destacándose el hecho de que ninguna de las empresas consultadas consideró que su situación económica empeoró respecto al mes anterior.
+
+Por otro lado, el indicador sobre el nivel de inventario mantiene la tendencia a la baja iniciada en mayo y se coloca en -10.5, advirtiendo una descumulación de existencias en un contexto de baja producción.
+
+:::
+
+::: {.right}
+#### Situación económica del mes actual
+
+```{r, fig.height=3, fig.width=5}
+eoe_dygraph_line_chart(c('sit_econ'), legend_w = 400) |> 
+  dygraphs::dyLimit(limit = 0, color = 'gray')
+```
+:::
+:::
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+### Disminuye la producción, los pedidos y el empleo
+
+------------------------------------------------------------------------
+
+::: {.second-container}
+::: {.left}
+
+En contraste con la evolución de la situación económica, el saldo sobre la producción marcó una reducción de 14.8 puntos respecto al mes anterior, para un balance de 0.0 que se interpreta como estabilidad en la variable.
+
+Del mismo modo, en el caso de los pedidos se observa una moderación tras 2 meses consecutivos de crecimiento. Esta vez el saldo se coloca en 20.0, para una reducción de 12.0 si compara con el registrado en agosto. 
+
+Esta situación se extiende también al indicador de empleo, cuyo saldo se coloca en -5.0 luego de que en agosto mostrara un cambio de tendencia a positiva por primera vez desde febrero de 2020.
+
+:::
+
+::: {.right}
+
+####  Producción y pedidos respecto al mes anterior
+
+```{r, fig.height=3, fig.width=5}
+eoe_dygraph_line_chart(c('produccion', 'pedidos'), legend_w = 400, plot_colors = colores$green) |> 
+  dygraphs::dyLimit(limit = 0, color = 'gray')
+```
+
+:::
+:::
+
+<!-- ----------------------------------------------------------------------------- -->
+
+### Sector manufacturero se mantiene con expectativas favorables
+
+------------------------------------------------------------------------
+
+::: {.third-container}
+::: {.left .first}
+
+En el mes de septiembre la expectativas para las distintas variables del sector industrial se mantuvieron favorables, aunque con balances inferiores a los magistrados el mes anterior, resultando en una postura moderada de cara la los próximos meses.
+
+De este modo, el saldo que resume las expectativas sobre la situación económica de los próximos seis meses se coloca en 52.6, en un contexto en el que el 94.7% de las empresas considera que su situación económica mejorará o se mantendrá igual.
+
+:::
+
+::: {.right .first}
+
+#### Expectativas situación económica (próximos 6 meses)
+
+```{r, fig.height=3, fig.width=5}
+eoe_dygraph_line_chart(c('sit_econ_exp'), legend_w = 400, plot_colors = colores$green) |> 
+  dygraphs::dyLimit(limit = 0, color = 'gray')
+```
+
+:::
+
+::: {.left .secondl}
+
+
+Las expecativas de producción y empleo también mostraron niveles inferiores a los del mes anterior, con saldos de 42.11 y 15.79, y variaciones mensuales de -13.4 y -2.7, respectivamente. Estos cambios se deben principalmente a que una mayor proporción de empresas entiende que estas variables mantendrían sus niveles actuales y no a que disminuirán.
+
+
+:::
+
+::: {.right .second}
+
+#### Expectativas de producción y empleo
+
+```{r, , fig.height=3, fig.width=5}
+eoe_dygraph_line_chart(c('produccion_exp', 'empleo_exp'), legend_w = 400, plot_colors = colores$green) |>
+  dygraphs::dyLimit(limit = 0, color = 'gray')
+```
+:::
+:::
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+### Confianza industrial y clima empresarial
+
+------------------------------------------------------------------------
+
+::: {.fourth-container}
+::: {.left .first}
+
+El Índice de Confianza Industrial (ICI) resume la actividad actual y las expectativas de actividad futura de las empresas del sector manufacturero en base a variables observables de las empresas. Este indicador mostró una leve disminución en septiembre, para un resultado de 62.2, explicado principalmente por la evolución reciente de la producción.
+
+:::
+
+::: {.right .first}
+
+#### Indicador de Confianza Industrial
+
+```{r, fig.height=3, fig.width=5}
+eoe_dygraph_bar_chart('ici', legend_w = 350, plot_colors = colores$green) 
+```
+
+:::
+
+::: {.left .secondl}
+
+Asimismo, la percepción que tienen los empresarios del sector acerca de la situación económica actual y futura de sus empresas se sintetiza a través del Indicador de Clima Empresarial (ICE). En este sondeo el indicador se coloca en un nivel ligeramente superior al del mes anterior con un resultado de 48.8. 
+
+:::
+
+::: {.right .second}
+
+#### Indicador de Clima Empresarial
+
+```{r, fig.height=3, fig.width=5}
+eoe_dygraph_bar_chart('ice')
+```
+
+:::
+:::
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+::: {.cuadro-resumen}
+
+### Cuadro resumen
+
+------------------------------------------------------------------------
+
+```{r}
+eoe_tabla_resumen(fullWidth = TRUE, fontSize = 16, comparation_lag = 12)
+```
+:::
