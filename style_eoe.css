@@ -80,11 +80,11 @@ p {
  .third-container  .secondl {
    flex: 1;
    position: relative;
-   bottom: 3px;
+   bottom: 0px;
  }
  
  .fourth-container .secondl {
- bottom: 70px;
+ bottom: 105px;
  position: relative;
 }
 

@@ -37,14 +37,14 @@ Septiembre 2021
 
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-### Situación económica del sector industrial
+### Mejora la situación económica del sector industrial
 
 ------------------------------------------------------------------------
 
 ::: {.first-container}
 ::: {.left}
 
-El indicador sobre la situación económica mostró una evolución favorable, pasó de 33.3 en agosto a 45.5 en septiembre.  Con este aumento el saldo de opinión alcanza en su valor más alto de los últimos 18 meses, destacándose el hecho de que ninguna de las empresas consultadas consideró que su situación económica empeoró respecto al mes anterior.
+El indicador sobre la situación económica mostró una evolución favorable, pasando de 33.3 en agosto a 45.5 en septiembre. Con este aumento el saldo de opinión alcanza su valor más alto de los últimos 18 meses, destacándose el hecho de que ninguna de las empresas consultadas consideró que su situación económica empeoró respecto al mes anterior. 
 
 Por otro lado, el indicador sobre el nivel de inventario mantiene la tendencia a la baja iniciada en mayo y se coloca en -10.5, advirtiendo una descumulación de existencias en un contexto de baja producción.
 
@@ -62,7 +62,7 @@ eoe_dygraph_line_chart(c('sit_econ'), legend_w = 400) |>
 
 <!-- ---------------------------------------------------------------------------------------------- -->
 
-### Disminuye la producción, los pedidos y el empleo
+### Disminuyen la producción, los pedidos y el empleo
 
 ------------------------------------------------------------------------
 
@@ -71,9 +71,9 @@ eoe_dygraph_line_chart(c('sit_econ'), legend_w = 400) |>
 
 En contraste con la evolución de la situación económica, el saldo sobre la producción marcó una reducción de 14.8 puntos respecto al mes anterior, para un balance de 0.0 que se interpreta como estabilidad en la variable.
 
-Del mismo modo, en el caso de los pedidos se observa una moderación tras 2 meses consecutivos de crecimiento. Esta vez el saldo se coloca en 20.0, para una reducción de 12.0 si compara con el registrado en agosto. 
+Del mismo modo, en el caso de los pedidos se observa una moderación tras 2 meses consecutivos de crecimiento. Esta vez el saldo se coloca en 20.0, para una reducción de 12.0 puntos si compara con el registrado en agosto.
 
-Esta situación se extiende también al indicador de empleo, cuyo saldo se coloca en -5.0 luego de que en agosto mostrara un cambio de tendencia a positiva por primera vez desde febrero de 2020.
+Esta situación se extiende también al indicador de empleo, cuyo saldo se coloca en -5.0 luego de que en agosto mostrara un cambio de nivel a positivo por primera vez desde febrero de 2020.
 
 :::
 
@@ -98,8 +98,8 @@ eoe_dygraph_line_chart(c('produccion', 'pedidos'), legend_w = 400, plot_colors =
 ::: {.third-container}
 ::: {.left .first}
 
-En el mes de septiembre la expectativas para las distintas variables del sector industrial se mantuvieron favorables, aunque con balances inferiores a los magistrados el mes anterior, resultando en una postura moderada de cara la los próximos meses.
-
+En el mes de septiembre las expectativas para las distintas variables del sector industrial se mantuvieron favorables, aunque con balances inferiores a los registrados el mes anterior, resultando en una postura moderada para los próximos meses.
+ 
 De este modo, el saldo que resume las expectativas sobre la situación económica de los próximos seis meses se coloca en 52.6, en un contexto en el que el 94.7% de las empresas considera que su situación económica mejorará o se mantendrá igual.
 
 :::
@@ -117,8 +117,7 @@ eoe_dygraph_line_chart(c('sit_econ_exp'), legend_w = 400, plot_colors = colores$
 
 ::: {.left .secondl}
 
-
-Las expecativas de producción y empleo también mostraron niveles inferiores a los del mes anterior, con saldos de 42.11 y 15.79, y variaciones mensuales de -13.4 y -2.7, respectivamente. Estos cambios se deben principalmente a que una mayor proporción de empresas entiende que estas variables mantendrían sus niveles actuales y no a que disminuirán.
+Las expectativas de producción y empleo también mostraron niveles inferiores a los del mes anterior, con saldos de 42.1 y 15.8, y variaciones mensuales de -13.4 y -2.7, respectivamente. Estos cambios se deben principalmente a que una mayor proporción de empresas entiende que estas variables mantendrían sus niveles actuales y no que disminuirán. 
 
 
 :::
@@ -143,7 +142,8 @@ eoe_dygraph_line_chart(c('produccion_exp', 'empleo_exp'), legend_w = 400, plot_c
 ::: {.fourth-container}
 ::: {.left .first}
 
-El Índice de Confianza Industrial (ICI) resume la actividad actual y las expectativas de actividad futura de las empresas del sector manufacturero en base a variables observables de las empresas. Este indicador mostró una leve disminución en septiembre, para un resultado de 62.2, explicado principalmente por la evolución reciente de la producción.
+El Índice de Confianza Industrial (ICI) resume la actividad actual y las expectativas de actividad futura de las empresas del sector manufacturero en base a variables observables de las empresas. Este indicador mostró una leve disminución en septiembre, para un resultado de 62.1, explicado principalmente por la evolución reciente de la producción.
+
 
 :::
 
